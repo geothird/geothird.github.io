@@ -1,0 +1,11 @@
+---
+layout: post
+title: First
+category: posts
+---
+
+Just started using [Jekyll][jekyll], seems to be all the rage these days.
+
+How can anyone resist free hosting on github, and markdown blogging?
+
+[jekyll]: https://github.com/mojombo/jekyll

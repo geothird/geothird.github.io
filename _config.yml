@@ -1,0 +1,11 @@
+markdown: rdiscount
+pygments: true
+permalink: /posts/:title
+rdiscount:
+  extensions: [smart]
+
+name: Geo
+url: http://geothird.github.io
+description: Dev stuffs
+github: geothird
+gravatar_url: https://secure.gravatar.com/avatar/a5f96bccbd9b17a462808167a4ca7b63
