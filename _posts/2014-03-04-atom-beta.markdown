@@ -1,0 +1,41 @@
+---
+layout: post
+title: Atom Beta
+category: posts
+---
+
+Got in the [atom][atom] beta today, making this post using it.
+
+My first impressions:
+
+1. Fast.
+2. Low Memory Footprint.
+3. Replaces need for Sublime Text or Text Mate entirely.
+4. Clean UI and easy to use.
+5. Yet another app on the increasingly popular .io domain.
+6. Seems like the created it for training purposes. (Schools etc)
+8. Decent set of packages.
+
+Although [Atom][atom] doesn't replace a full featured IDE, it seems
+like a great fit for a developers tool box. Something to use when
+you don't want to open your bloated IDE.
+
+The most important thing about [Atom][atom] is the direction that
+you can now see [Github][github] taking, which is, web based code editing.
+I feel for any other start up out there that has already entered
+this market or is currently trying because [Github][github] will
+win this with easy.
+
+It also highlights the move to the web, which some people keep denying
+but in the back of their minds know its the future.
+
+Whats next for [Github][github] after this? I am going to venture to
+guess they will move into to the virtual developer box similar to
+[nitrous.io][nitrus].  Since your code is already hosted by them, and
+now you have an editor, all you need is a place to run the code.
+
+gg [Github][github]
+
+[atom]: http://atom.io
+[nitrus]: https://www.nitrous.io/
+[github]: https://github.com
