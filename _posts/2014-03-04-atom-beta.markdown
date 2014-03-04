@@ -13,7 +13,7 @@ My first impressions:
 3. Replaces need for Sublime Text or Text Mate entirely.
 4. Clean UI and easy to use.
 5. Yet another app on the increasingly popular .io domain.
-6. Seems like the created it for training purposes. (Schools etc)
+6. Seems like they created it for training purposes. (Schools etc)
 8. Decent set of packages.
 
 Although [Atom][atom] doesn't replace a full featured IDE, it seems
