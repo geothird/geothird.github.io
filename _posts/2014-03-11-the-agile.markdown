@@ -1,0 +1,35 @@
+---
+layout: post
+title: The Agile
+category: posts
+---
+
+Today I read this post by [@pragdave][pragdave] about [Agility][agility] being
+the new word for agile.  I found this quote to be most interesting.
+>The word “agile” has been subverted to the point where it is effectively meaningless, and what passes for an agile community seems to be largely an arena for consultants and vendors to hawk services and products.
+
+As a programmer I have found that this happens very often with ideas that are
+shared, or even technologies that are shared with others.  Somehow marketing
+folks get a hold of it and they just drive it into the ground.
+
+When you hear these words on something like CNBC you know it is no longer being
+used for it's original purpose.
+
+Having done "Agile Development" I still don't feel I am living up
+to its original goals, not only that I don't believe I have participated in
+what Agile really stands for, and for that matter I no longer think anyone has.
+
+I have even heard Agile called "The Agile" by leaders in a company I previously
+worked for.  The problem is that it was an important word in that company and it sold the
+project, it kept it going. They didn't have
+a clue what was actually going on, what programmers were doing, but as long as
+they had "The Agile" they were fine.
+
+I guess my point here is that I feel bad for "Agile" and for it's creators.
+Their ideas got taken in an entirely different direction from where they wanted.
+
+This seems to be the fate of a lot of the software industry. So many terms, and
+so many wrong meanings.
+
+[agility]: http://pragdave.me/blog/2014/03/04/time-to-kill-agile/
+[pragdave]: http://pragdave.me
