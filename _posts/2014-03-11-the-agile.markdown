@@ -4,7 +4,7 @@ title: The Agile
 category: posts
 ---
 
-Today I read this post by [@pragdave][pragdave] about [Agility][agility] being
+Today I read this post by [pragdave][pragdave] about [Agility][agility] being
 the new word for agile.  I found this quote to be most interesting.
 >The word “agile” has been subverted to the point where it is effectively meaningless, and what passes for an agile community seems to be largely an arena for consultants and vendors to hawk services and products.
 
