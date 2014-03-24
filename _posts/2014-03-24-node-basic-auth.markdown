@@ -1,6 +1,6 @@
 ---
 layout: post
-title: node-basic-auth
+title: Node Basic Authentication
 category: posts
 ---
 
