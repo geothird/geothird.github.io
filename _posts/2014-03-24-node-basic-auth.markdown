@@ -16,7 +16,7 @@ The changes have not been merged in as of this writing so I set up the following
 In order to setup the server side you just have to declare passport and set up a basic strategy object.
 
 **app.js:**
-```javascript
+{% highlight javascript %}
 	var passport = require('passport');
 	var BasicStrategy = require('gt-passport-http').BasicStrategy;
 	passport.use(new BasicStrategy({ disableBasicChallenge: true },
@@ -31,28 +31,28 @@ In order to setup the server side you just have to declare passport and set up a
 	    return done(null, user);
 	  }
 	));
-```
+{% endhighlight %}
 
 This handles all authenticated requests. In order to protect a resource you need to add a passport authenticate call onto your route.
 
 **app.js:**
-```javascript
+{% highlight javascript %}
 app.get('/api/v1/resources',
   passport.authenticate('basic', { session: false }),
   resources.list
 );
-```
+{% endhighlight %}
 
 That takes care of the server side, now there are pieces needed on the client side in order to request that resource with basic authentication.
 
 First the angular app needs an interceptor that intercepts the 401 errors as well as checking regular requests.
 
 **public/javascripts/app.js:**
-```javascript
+{% highlight javascript %}
 	app.config(function ($httpProvider) {
 	  $httpProvider.interceptors.push(
 	    function ($rootScope, $location, $cookieStore, $q) {
-	
+
 	      return {
 	        'request': function (request) {
 	          $rootScope.currentUser = $cookieStore.get('authdata');
@@ -75,12 +75,12 @@ First the angular app needs an interceptor that intercepts the 401 errors as wel
 	      };
 	    });
 	});
-```
+{% endhighlight %}
 
 After that there needs to be an authentication service that angular uses to set the basic authentication header and call login and logout from a controller.
 
 **public/javascripts/services.js:**
-```javascript
+{% highlight javascript %}
 api.factory('Auth', ['Base64', '$cookieStore', '$http',
   function (Base64, $cookieStore, $http) {
     $http.defaults.headers.common['Authorization'] =
@@ -98,12 +98,12 @@ api.factory('Auth', ['Base64', '$cookieStore', '$http',
       }
     };
   }]);
-```
+{% endhighlight %}
 
 Then in the angular controller you can call login and logout.  Login is used from a login.html partial that sends along the user information which is used from the scope to pass to the Auth service that was setup previously.
 
 **public/javascripts/controllers.js:**
-```javascript
+{% highlight javascript %}
 $scope.loginUser = function () {
     // Do basic authentication
     Auth.login($scope.user);
@@ -114,7 +114,7 @@ $scope.loginUser = function () {
     Auth.logout();
     $location.path('login');
   }
-```
+{% endhighlight %}
 
 Thats the basics of it, the source code for the example I created is located [here](node-basic-auth).
 
