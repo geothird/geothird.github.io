@@ -17,20 +17,20 @@ In order to setup the server side you just have to declare passport and set up a
 
 **app.js:**
 {% highlight javascript %}
-	var passport = require('passport');
-	var BasicStrategy = require('gt-passport-http').BasicStrategy;
-	passport.use(new BasicStrategy({ disableBasicChallenge: true },
-	  function (userid, password, done) {
-	    var user = users[userid];
-	    if (!user) {
-	      return done(null, false);
-	    }
-	    if (password != user.password) {
-	      return done(null, false);
-	    }
-	    return done(null, user);
-	  }
-	));
+var passport = require('passport');
+var BasicStrategy = require('gt-passport-http').BasicStrategy;
+passport.use(new BasicStrategy({ disableBasicChallenge: true },
+  function (userid, password, done) {
+    var user = users[userid];
+    if (!user) {
+      return done(null, false);
+    }
+    if (password != user.password) {
+      return done(null, false);
+    }
+    return done(null, user);
+  }
+));
 {% endhighlight %}
 
 This handles all authenticated requests. In order to protect a resource you need to add a passport authenticate call onto your route.
@@ -49,32 +49,32 @@ First the angular app needs an interceptor that intercepts the 401 errors as wel
 
 **public/javascripts/app.js:**
 {% highlight javascript %}
-	app.config(function ($httpProvider) {
-	  $httpProvider.interceptors.push(
-	    function ($rootScope, $location, $cookieStore, $q) {
+app.config(function ($httpProvider) {
+  $httpProvider.interceptors.push(
+    function ($rootScope, $location, $cookieStore, $q) {
 
-	      return {
-	        'request': function (request) {
-	          $rootScope.currentUser = $cookieStore.get('authdata');
-	          if (!$rootScope.currentUser && $location.path() != '/login') {
-	            $location.path('/login');
-	          }
-	          return request;
-	        },
-	        'responseError': function (rejection) {
-	          if (rejection.status === 401 && $location.path() != '/login') {
-	            if ($rootScope.currentUser) {
-	              $cookieStore.remove('authdata');
-	              $rootScope.currentUser = '';
-	              $rootScope.loginError = 'Error 401 Invalid username/password';
-	            }
-	            $location.path('/login');
-	          }
-	          return $q.reject(rejection);
-	        }
-	      };
-	    });
-	});
+      return {
+        'request': function (request) {
+          $rootScope.currentUser = $cookieStore.get('authdata');
+          if (!$rootScope.currentUser && $location.path() != '/login') {
+            $location.path('/login');
+          }
+          return request;
+        },
+        'responseError': function (rejection) {
+          if (rejection.status === 401 && $location.path() != '/login') {
+            if ($rootScope.currentUser) {
+              $cookieStore.remove('authdata');
+              $rootScope.currentUser = '';
+              $rootScope.loginError = 'Error 401 Invalid username/password';
+            }
+            $location.path('/login');
+          }
+          return $q.reject(rejection);
+        }
+      };
+    });
+});
 {% endhighlight %}
 
 After that there needs to be an authentication service that angular uses to set the basic authentication header and call login and logout from a controller.
