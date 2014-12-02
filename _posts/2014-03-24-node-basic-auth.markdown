@@ -6,12 +6,12 @@ category: posts
 
 In working with Angular, and Express with Node.js one of the problems I ran into was how to use basic authentication.  Using angular to keep a cookie of the basic auth hash and then verifying that hash against protected resources on a Node.js server.
 
-I decided to use [passport](passport) as it already has support for things like basic auth and digest.  However one of the problems with [passport-http](passport-http) is that if a user
+I decided to use [passport][passport] as it already has support for things like basic auth and digest.  However one of the problems with [passport-http][passport-http] is that if a user
 recieves a 401 (Unauthorized) error by failing to login successfully it will return that user a WWW-Authenticate header.  This isn't a problem until you notice that browsers respond to this header with a browser login popup.  This is a problem if you want your users to use your login page rather than the browsers.
 
-I modified the [passport-http](passport-http) in my fork to allow the WWW-Authenticate header to be disabled by using the flag `disableBasicChallenge`. Setting this to true will prevent the header from being returned to the user and prevent the browser based popup.
+I modified the [passport-http][passport-http] in my fork to allow the WWW-Authenticate header to be disabled by using the flag `disableBasicChallenge`. Setting this to true will prevent the header from being returned to the user and prevent the browser based popup.
 
-The changes have not been merged in as of this writing so I set up the following node package it is available in npm via running `$ npm install gt-passport-http` or add it to `package.json` as `"gt-passport-http": "0.2.2"` and the code is available [here](gt-passport-http).
+The changes have not been merged in as of this writing so I set up the following node package it is available in npm via running `$ npm install gt-passport-http` or add it to `package.json` as `"gt-passport-http": "0.2.2"` and the code is available [here][gt-passport-http].
 
 In order to setup the server side you just have to declare passport and set up a basic strategy object.
 
@@ -116,7 +116,7 @@ $scope.loginUser = function () {
   }
 {% endhighlight %}
 
-Thats the basics of it, the source code for the example I created is located [here](node-basic-auth).
+Thats the basics of it, the source code for the example I created is located [here][node-basic-auth].
 
 [node-basic-auth]: https://github.com/geothird/node-basic-auth
 [gt-passport-http]: https://github.com/geothird/passport-http
